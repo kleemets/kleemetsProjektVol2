@@ -16,6 +16,8 @@ public class Aken {
     public Pane pane;
     public Scene stseen1;
     public ChoiceBox riigivalik;
+    public static String riik;
+
 
     public Aken (){
         avaAken();
@@ -40,14 +42,17 @@ public class Aken {
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                 if (newValue.equals("Estonia")){
                     lava1.close();
+                    riik= riigivalik.getValue().toString();
                     new Estonia();
 
                 }else if (newValue.equals("Latvia")){
                     lava1.close();
+                    riik= riigivalik.getValue().toString();
                     new Latvia();
                     
                 }else if (newValue.equals("Lithuania")){
                     lava1.close();
+                    riik= riigivalik.getValue().toString();
                     new Lithuania();
                 }
 

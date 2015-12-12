@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
  */
 public class HinnaParing {
     public TextField kaal;
-    String sisestatudKaal;
+    public  static String sisestatudKaal;
     double reaalKaal;
     public Button ok;
     public Stage lava3;
@@ -48,6 +48,7 @@ public class HinnaParing {
             reaalKaal = Double.parseDouble(sisestatudKaal);
             lava3.close();
 
+
             importJson j = null;
             try {
                 j = new importJson();
@@ -70,6 +71,7 @@ public class HinnaParing {
             j.uusAken2();
 
         });
+
 
 
     }

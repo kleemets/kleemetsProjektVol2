@@ -15,6 +15,7 @@ import java.io.FileReader;
 public class importJson {
     public double hind;
     public Pane pane;
+    public static String kaal;
 
     public importJson() throws FileNotFoundException, IllegalAccessException, NoSuchFieldException {
 
@@ -24,12 +25,30 @@ public class importJson {
         Stage lava4 = new Stage();
         pane = new Pane();
         Label tere = new Label();
-        tere.setText("Teie paki maksumus on " + hind + "€");
+        tere.setText("Teie paki maksumus on " + hind + "â‚¬");
         pane.getChildren().addAll(tere);
 
         Scene stseen4 = new Scene(pane);
         lava4.setScene(stseen4);
         lava4.show();
+
+        Double vastus = hind;
+        kaal = Double.toString(vastus);
+
+        String tsoon = new String("");
+        if( Aken.riik.equals("Estonia")){
+            tsoon = Estonia.viimatiValitudtsoon;
+        }else if (Aken.riik.equals("Latvia")){
+            tsoon = Latvia.viimatiValitudtsoon;
+        }else if (Aken.riik.equals("Lithuania")){
+            tsoon = Lithuania.viimatiValitudtsoon;
+        }
+
+
+        Andmebaas a = new Andmebaas();
+
+
+        a.saveHistory( Aken.riik, tsoon ,HinnaParing.sisestatudKaal, importJson.kaal);
 
     }
 
@@ -37,17 +56,14 @@ public class importJson {
     public void jsonistKysimine(double s, String r, String y) throws FileNotFoundException, NoSuchFieldException, IllegalAccessException {
 
         FileReader reader = new FileReader("/Users/Leemets/Desktop/dpd.json");
-
         Gson gson = new Gson();
 
         KaaluObjekt[] andmed = gson.fromJson(reader, KaaluObjekt[].class);
 
         String riik = r;
-
         String tsoon = y;
 
         if (s <= 0.5) {
-
             for (int i = 0; i < andmed.length; i++) {
                 if (andmed[i].kg == 0.5 ) {
                     Object riigiAndmed = andmed[i].getClass().getDeclaredField(riik).get(andmed[i]);

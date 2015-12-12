@@ -18,6 +18,8 @@ public class Lithuania {
     public Button tsoon3;
     public String riik = new String("lithuania");
     public String tsoon;
+    public static String viimatiValitudtsoon;
+
 
     public Lithuania(){
         uusAken();
@@ -29,6 +31,7 @@ public class Lithuania {
         tsoon1.setOnAction(event -> {
             lava2.close();
             tsoon = new String("zone1");
+            viimatiValitudtsoon= "Tsoon 1";
             new HinnaParing(riik, tsoon);
 
         });
@@ -36,12 +39,14 @@ public class Lithuania {
         tsoon2.setOnAction(event -> {
             lava2.close();
             tsoon = new String("zone2");
+            viimatiValitudtsoon="Tsoon 2";
             new HinnaParing(riik,tsoon);
 
         });
         tsoon3.setOnAction(event -> {
             lava2.close();
             tsoon= new String("zone3");
+            viimatiValitudtsoon="Tsoon 3";
             new HinnaParing(riik,tsoon);
         });
     }

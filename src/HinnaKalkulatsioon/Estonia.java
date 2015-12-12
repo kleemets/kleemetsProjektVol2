@@ -19,6 +19,8 @@ public class Estonia {
     public Button tsoon4;
     public String riik = new String("estonia");
     public String tsoon;
+    public static String viimatiValitudtsoon;
+
 
     public Estonia() {
         uusAken();
@@ -35,8 +37,8 @@ public class Estonia {
     }
     public void linnadePaigutus() {
         String[] eestiLinnad1 = {"Tallinn 10000-19999"};
-        String[] eestiLinnad2 = {"Jõhvi 41531-42599", "Jüri 75301", "Lagedi/Peetri/Rae 75303-75312", "Maardu 74102-74199", "Pärnu 80010-80401", "Rakvere 44301-44317", "Saku 75501", "Saue 76401", "Keila 76505-76601", "Tabasalu/Harku 76901-76902", "Tartu 50000-60102", "Tartumaa 60512-60545", "Tartumaa2 61400-61499", "Tartumaa3 61700-61999", "Tartumaa4 62100-62299", "Viimsi 74001-74002", "Viljandi 71001-71033"};
-        String[] eestiLinnad3 = {"Elva 61501-61510", "Haapsalu 90401-90403", "Jõgeva 48302-48309", "Kärdla 92401-92429", "Kohtla-Järve 30102-30328", "Kuressaare 93801-93820", "Märjamaa 78301-78318", "Narva 20103-21020", "Otepaa 67401-67407", "Paide 72701-72720", "Põltsamaa 48102-48106", "Põlva 63302-63399", "Rapla 79502-79515", "Sillamäe 40201-40233", "Türi 72201-72215", "Valga 68201-68209", "Võru 65602-65620"};
+        String[] eestiLinnad2 = {"JÃµhvi 41531-42599", "JÃ¼ri 75301", "Lagedi/Peetri/Rae 75303-75312", "Maardu 74102-74199", "PÃ¤rnu 80010-80401", "Rakvere 44301-44317", "Saku 75501", "Saue 76401", "Keila 76505-76601", "Tabasalu/Harku 76901-76902", "Tartu 50000-60102", "Tartumaa 60512-60545", "Tartumaa2 61400-61499", "Tartumaa3 61700-61999", "Tartumaa4 62100-62299", "Viimsi 74001-74002", "Viljandi 71001-71033"};
+        String[] eestiLinnad3 = {"Elva 61501-61510", "Haapsalu 90401-90403", "JÃµgeva 48302-48309", "KÃ¤rdla 92401-92429", "Kohtla-JÃ¤rve 30102-30328", "Kuressaare 93801-93820", "MÃ¤rjamaa 78301-78318", "Narva 20103-21020", "OtepÃ¤Ã¤ 67401-67407", "Paide 72701-72720", "PÃµltsamaa 48102-48106", "PÃµlva 63302-63399", "Rapla 79502-79515", "SillamÃ¤e 40201-40233", "TÃ¼ri 72201-72215", "Valga 68201-68209", "VÃµru 65602-65620"};
         String[] eestiLinnad4 = {"Muu Eesti"};
 
         String[][] eestiLinnad = {eestiLinnad1,eestiLinnad2,eestiLinnad3,eestiLinnad4};
@@ -62,6 +64,9 @@ public class Estonia {
         tsoon1.setOnAction(event -> {
             lava2.close();
             tsoon = new String("zone1");
+
+            viimatiValitudtsoon= "Tsoon 1";
+
             new HinnaParing(riik, tsoon);
 
         });
@@ -69,18 +74,21 @@ public class Estonia {
         tsoon2.setOnAction(event -> {
             lava2.close();
             tsoon = new String("zone2");
+            viimatiValitudtsoon= "Tsoon 2";
             new HinnaParing(riik,tsoon);
 
         });
         tsoon3.setOnAction(event -> {
             lava2.close();
             tsoon= new String("zone3");
+            viimatiValitudtsoon= "Tsoon 3";
             new HinnaParing(riik,tsoon);
         });
 
         tsoon4.setOnAction(event -> {
             lava2.close();
             tsoon = new String("zone4");
+            viimatiValitudtsoon= "Tsoon 4";
             new HinnaParing(riik,tsoon);
         });
     }

@@ -18,6 +18,7 @@ public class Latvia {
     public Button tsoon3;
     public String riik = new String("latvia");
     public String tsoon;
+    public static String viimatiValitudtsoon;
 
 
     public Latvia(){
@@ -30,6 +31,7 @@ public class Latvia {
             tsoon1.setOnAction(event -> {
                 lava2.close();
                 tsoon = new String("zone1");
+                viimatiValitudtsoon = "Tsoon 1";
                 new HinnaParing(riik, tsoon);
 
             });
@@ -37,12 +39,14 @@ public class Latvia {
             tsoon2.setOnAction(event -> {
                 lava2.close();
                 tsoon = new String("zone2");
+                viimatiValitudtsoon="Tsoon 2";
                 new HinnaParing(riik,tsoon);
 
             });
             tsoon3.setOnAction(event -> {
                 lava2.close();
                 tsoon= new String("zone3");
+                viimatiValitudtsoon="Tsoon 3";
                 new HinnaParing(riik,tsoon);
             });
     }
@@ -50,7 +54,7 @@ public class Latvia {
     private void linnadePaigutus() {
         String[] latvia1 = {"Riia 1000-1999"};
         String[] latvia2 = {"Riia regioon 2000-2133","Riia regioon 2135-2999","Daugavpils 5400-5422", "Jekapils 5200-5207", "Rezekne 4600-4605", "Gulbene 4400-4401", "Valmeira 4200-4202", "Cesis 4100-4103","Saldus 3800-3801", "Ventspils 3600-3606", "Liepaja 3400-3417", "Talsi 3200-3203", "Jelgava 3000-3035", };
-        String[] latvia3 = {"Muu Läti"};
+        String[] latvia3 = {"Muu Lï¿½ti"};
 
         String[][] latvia = {latvia1,latvia2,latvia3};
 
