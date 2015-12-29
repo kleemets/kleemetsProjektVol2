@@ -40,7 +40,7 @@ public class Estonia {
         String[] eestiLinnad4 = {"Muu Eesti"};
 
         String[][] eestiLinnad = {eestiLinnad1,eestiLinnad2,eestiLinnad3,eestiLinnad4};
-       
+
         // Uue lava seadistamine
         lava2 = new Stage();
         linnad = new GridPane();
