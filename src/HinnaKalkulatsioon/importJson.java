@@ -1,10 +1,9 @@
 package HinnaKalkulatsioon;
 
 import com.google.gson.Gson;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,7 +13,6 @@ import java.io.FileReader;
  */
 public class importJson {
     public double hind;
-    public Pane pane;
     public static String kaal;
 
     public importJson() throws FileNotFoundException, IllegalAccessException, NoSuchFieldException {
@@ -22,39 +20,45 @@ public class importJson {
     }
 
     public void uusAken2(){
-        Stage lava4 = new Stage();
-        pane = new Pane();
-        Label tere = new Label();
-        tere.setText("Teie paki maksumus on " + hind + "€");
-        pane.getChildren().addAll(tere);
+        //Hinna kuvamine samale Stage-ile, kus oli hinna pärimine.
+        Label vastus2 = new Label();
+        vastus2.setText("Teie paki maksumus on " + hind + "€");
 
-        Scene stseen4 = new Scene(pane);
-        lava4.setScene(stseen4);
-        lava4.show();
+        vastus2.setFont(Font.font("Arial", FontWeight.BOLD,16));
+        HinnaParing.vb.getChildren().addAll(vastus2);
 
+
+        HinnaParing.lava3.setScene(HinnaParing.stseen3);
+        HinnaParing.lava3.show();
+        HinnaParing.lava3.setOnCloseRequest(event -> {
+            new Aken();
+        });
+
+        //Hinna teisendamine String-iks, et seda saaks salvestada Andmebaasi
         Double vastus = hind;
         kaal = Double.toString(vastus);
 
+        //Vastavalt valitud riigile tsooni salvestamine
         String tsoon = new String("");
-        if( Aken.riik.equals("Estonia")){
+        if( Aken.riik.equals("Eesti")){
             tsoon = Estonia.viimatiValitudtsoon;
-        }else if (Aken.riik.equals("Latvia")){
+        }else if (Aken.riik.equals("Läti")){
             tsoon = Latvia.viimatiValitudtsoon;
-        }else if (Aken.riik.equals("Lithuania")){
+        }else if (Aken.riik.equals("Leedu")){
             tsoon = Lithuania.viimatiValitudtsoon;
         }
 
-
         Andmebaas a = new Andmebaas();
-
-
-        a.saveHistory( Aken.riik, tsoon ,HinnaParing.sisestatudKaal, importJson.kaal);
+        //Andmebaasi salvestamine
+        a.saveHistory( Aken.riik, tsoon , HinnaParing.sisestatudKaal, importJson.kaal);
+        a.sulgeYhendus();
 
     }
 
 
     public void jsonistKysimine(double s, String r, String y) throws FileNotFoundException, NoSuchFieldException, IllegalAccessException {
 
+        //Json faili avamine
         FileReader reader = new FileReader("/Users/Leemets/Desktop/dpd.json");
         Gson gson = new Gson();
 
@@ -63,6 +67,7 @@ public class importJson {
         String riik = r;
         String tsoon = y;
 
+        //Sisestatud kaalu kontrollimine, vastavalt kuhu vahemikku antud saadetis jääb. Tsükli algne näidis on saadud Krister Viirsaarelt.
         if (s <= 0.5) {
             for (int i = 0; i < andmed.length; i++) {
                 if (andmed[i].kg == 0.5 ) {

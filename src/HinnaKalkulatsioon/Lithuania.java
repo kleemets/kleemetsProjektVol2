@@ -1,9 +1,13 @@
 package HinnaKalkulatsioon;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
 /**
@@ -22,7 +26,7 @@ public class Lithuania {
 
 
     public Lithuania(){
-        uusAken();
+
         linnadePaigutus();
         nupuVajutus();
     }
@@ -58,6 +62,12 @@ public class Lithuania {
 
         String[][] leedu = {leedu1,leedu2,leedu3};
 
+        lava2 = new Stage();
+        linnad = new GridPane();
+        lava2.setTitle("Hinnakalkulaator");
+        lava2.getIcons().add(new Image("unnamed.png"));
+        linnad.setGridLinesVisible(false);
+
         tsoon1 = new Button("Tsoon 1");
         tsoon2 = new Button("Tsoon 2");
         tsoon3 = new Button("Tsoon 3");
@@ -72,14 +82,15 @@ public class Lithuania {
                 linnad.add(new Label(leedu[j][i]), j + 1, i + 1);
             }
         }
-    }
+        linnad.setVgap(10);
+        linnad.setHgap(10);
 
-    private void uusAken() {
-        lava2 = new Stage();
-        linnad = new GridPane();
-        linnad.setGridLinesVisible(true);
+        linnad.setStyle("-fx-background-color: #FFFFFF;");
+
         stseen1 = new Scene(linnad);
         lava2.setScene(stseen1);
         lava2.show();
     }
+
+
 }

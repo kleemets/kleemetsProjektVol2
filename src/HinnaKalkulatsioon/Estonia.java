@@ -1,10 +1,14 @@
 package HinnaKalkulatsioon;
 
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
+import java.util.Arrays;
 
 /**
  * Created by Leemets on 2.12.2015.
@@ -17,31 +21,33 @@ public class Estonia {
     public Button tsoon2;
     public Button tsoon3;
     public Button tsoon4;
+    //Määran ära riigi, et saaks seda pärast kaasa anda hinnapäringu klassile ja sealt edasi importJson klassile
     public String riik = new String("estonia");
     public String tsoon;
     public static String viimatiValitudtsoon;
 
 
     public Estonia() {
-        uusAken();
         linnadePaigutus();
         nupuVajutus();
     }
-    public void uusAken() {
-        lava2 = new Stage();
-        linnad = new GridPane();
-        linnad.setGridLinesVisible(true);
-        stseen2 = new Scene(linnad);
-        lava2.setScene(stseen2);
-        lava2.show();
-    }
+
     public void linnadePaigutus() {
+        //Tsoonide defineerimine ja paigutamine
         String[] eestiLinnad1 = {"Tallinn 10000-19999"};
         String[] eestiLinnad2 = {"Jõhvi 41531-42599", "Jüri 75301", "Lagedi/Peetri/Rae 75303-75312", "Maardu 74102-74199", "Pärnu 80010-80401", "Rakvere 44301-44317", "Saku 75501", "Saue 76401", "Keila 76505-76601", "Tabasalu/Harku 76901-76902", "Tartu 50000-60102", "Tartumaa 60512-60545", "Tartumaa2 61400-61499", "Tartumaa3 61700-61999", "Tartumaa4 62100-62299", "Viimsi 74001-74002", "Viljandi 71001-71033"};
         String[] eestiLinnad3 = {"Elva 61501-61510", "Haapsalu 90401-90403", "Jõgeva 48302-48309", "Kärdla 92401-92429", "Kohtla-Järve 30102-30328", "Kuressaare 93801-93820", "Märjamaa 78301-78318", "Narva 20103-21020", "Otepää 67401-67407", "Paide 72701-72720", "Põltsamaa 48102-48106", "Põlva 63302-63399", "Rapla 79502-79515", "Sillamäe 40201-40233", "Türi 72201-72215", "Valga 68201-68209", "Võru 65602-65620"};
         String[] eestiLinnad4 = {"Muu Eesti"};
 
         String[][] eestiLinnad = {eestiLinnad1,eestiLinnad2,eestiLinnad3,eestiLinnad4};
+       
+        // Uue lava seadistamine
+        lava2 = new Stage();
+        linnad = new GridPane();
+        linnad.setGridLinesVisible(false);
+
+        lava2.setTitle("Hinnakalkulaator");
+        lava2.getIcons().add(new Image("unnamed.png"));
 
         tsoon1 = new Button("Tsoon 1");
         tsoon2 = new Button("Tsoon 2");
@@ -53,20 +59,33 @@ public class Estonia {
         linnad.add(tsoon3,3,0);
         linnad.add(tsoon4,4,0);
 
+        //Gitterist saadud küsimuste vastuseks sain sellise tsükli, mis paigutab linnad GridPane-i automaatselt.
         for (int j = 0; j < eestiLinnad.length; j++) {
             for (int i = 0; i < eestiLinnad[j].length; i++) {
                 linnad.add(new Label(eestiLinnad[j][i]), j + 1, i + 1);
             }
         }
 
+        linnad.setVgap(10);
+        linnad.setHgap(10);
+
+        linnad.setStyle("-fx-background-color: #FFFFFF;");
+
+        stseen2 = new Scene(linnad);
+        lava2.setScene(stseen2);
+        lava2.show();
+
+
     }
     public void nupuVajutus() {
+        //Kasutaja valib tsooni, kuhu ta soovib enda pakki saata.
         tsoon1.setOnAction(event -> {
             lava2.close();
+            // Annan kaasa tsooni numbri, et seda saaks kasutada pärast hinna arvutamisel ja klassis importJson
             tsoon = new String("zone1");
-
+            //Määran ära, milline on valitud tsoon, et seda saaks kasutada Andmebaas klassis
             viimatiValitudtsoon= "Tsoon 1";
-
+            // Peale tsooni valmist
             new HinnaParing(riik, tsoon);
 
         });

@@ -3,6 +3,7 @@ package HinnaKalkulatsioon;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -22,7 +23,7 @@ public class Latvia {
 
 
     public Latvia(){
-        uusAken();
+
         linnadePaigutus();
         nupuVajutus();
     }
@@ -54,9 +55,15 @@ public class Latvia {
     private void linnadePaigutus() {
         String[] latvia1 = {"Riia 1000-1999"};
         String[] latvia2 = {"Riia regioon 2000-2133","Riia regioon 2135-2999","Daugavpils 5400-5422", "Jekapils 5200-5207", "Rezekne 4600-4605", "Gulbene 4400-4401", "Valmeira 4200-4202", "Cesis 4100-4103","Saldus 3800-3801", "Ventspils 3600-3606", "Liepaja 3400-3417", "Talsi 3200-3203", "Jelgava 3000-3035", };
-        String[] latvia3 = {"Muu L�ti"};
+        String[] latvia3 = {"Muu Läti"};
 
         String[][] latvia = {latvia1,latvia2,latvia3};
+
+        lava2 = new Stage();
+        linnad = new GridPane();
+        linnad.setGridLinesVisible(false);
+        lava2.setTitle("Hinnakalkulaator");
+        lava2.getIcons().add(new Image("unnamed.png"));
 
         tsoon1 = new Button("Tsoon 1");
         tsoon2 = new Button("Tsoon 2");
@@ -72,16 +79,15 @@ public class Latvia {
                 linnad.add(new Label(latvia[j][i]), j + 1, i + 1);
             }
         }
-    }
+        linnad.setVgap(10);
+        linnad.setHgap(10);
 
+        linnad.setStyle("-fx-background-color: #FFFFFF;");
 
-    private void uusAken() {
-        lava2 = new Stage();
-        linnad = new GridPane();
-        linnad.setGridLinesVisible(true);
         stseen1 = new Scene(linnad);
         lava2.setScene(stseen1);
         lava2.show();
-
     }
+
+
 }
