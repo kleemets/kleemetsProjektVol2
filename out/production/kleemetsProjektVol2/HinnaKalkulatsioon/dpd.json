@@ -1,0 +1,422 @@
+[
+    {
+        "kg": 0.5,
+        "m3": null,
+        "estonia": {
+            "zone1": 4.27,
+            "zone2": 4.79,
+            "zone3": 5.24,
+            "zone4": 5.91
+        },
+        "latvia": {
+            "zone1": 9.28,
+            "zone2": 9.95,
+            "zone3": 11.97
+        },
+        "lithuania": {
+            "zone1": 9.50,
+            "zone2": 10.17,
+            "zone3": 12.26
+        }
+    },
+    {
+        "kg": 3,
+        "m3": null,
+        "estonia": {
+            "zone1": 4.64,
+            "zone2": 5.16,
+            "zone3": 5.99,
+            "zone4": 6.96
+        },
+        "latvia": {
+            "zone1": 10.62,
+            "zone2": 11.00,
+            "zone3": 13.54
+        },
+        "lithuania": {
+            "zone1": 10.85,
+            "zone2": 11.36,
+            "zone3": 13.98
+        }
+    },
+    {
+        "kg": 5,
+        "m3": null,
+        "estonia": {
+            "zone1": 5.16,
+            "zone2": 5.99,
+            "zone3": 6.96,
+            "zone4": 8.30
+        },
+        "latvia": {
+            "zone1": 12.79,
+            "zone2": 13.62,
+            "zone3": 17.13
+        },
+        "lithuania": {
+            "zone1": 13.16,
+            "zone2": 13.98,
+            "zone3": 17.64
+        }
+    },
+    {
+        "kg": 10,
+        "m3": null,
+        "estonia": {
+            "zone1": 5.69,
+            "zone2": 6.59,
+            "zone3": 7.78,
+            "zone4": 9.28
+        },
+        "latvia": {
+            "zone1": 13.83,
+            "zone2": 14.88,
+            "zone3": 18.63
+        },
+        "lithuania": {
+            "zone1": 14.29,
+            "zone2": 15.41,
+            "zone3": 19.07
+        }
+    },
+    {
+        "kg": 15,
+        "m3": null,
+        "estonia": {
+            "zone1": 6.35,
+            "zone2": 7.41,
+            "zone3": 8.60,
+            "zone4": 10.32
+        },
+        "latvia": {
+            "zone1": 15.26,
+            "zone2": 16.31,
+            "zone3": 20.50
+        },
+        "lithuania": {
+            "zone1": 15.78,
+            "zone2": 16.98,
+            "zone3": 21.01
+        }
+    },
+    {
+        "kg": 20,
+        "m3": null,
+        "estonia": {
+            "zone1": 7.34,
+            "zone2": 8.53,
+            "zone3": 9.87,
+            "zone4": 11.82
+        },
+        "latvia": {
+            "zone1": 17.13,
+            "zone2": 18.47,
+            "zone3": 24.30
+        },
+        "lithuania": {
+            "zone1": 17.73,
+            "zone2": 19.07,
+            "zone3": 25.27
+        }
+    },
+    {
+        "kg": 25,
+        "m3": null,
+        "estonia": {
+            "zone1": 8.90,
+            "zone2": 10.47,
+            "zone3": 12.19,
+            "zone4": 14.59
+        },
+        "latvia": {
+            "zone1": 19.45,
+            "zone2": 23.63,
+            "zone3": 28.42
+        },
+        "lithuania": {
+            "zone1": 20.79,
+            "zone2": 24.15,
+            "zone3": 29.99
+        }
+    },
+    {
+        "kg": 31.5,
+        "m3": null,
+        "estonia": {
+            "zone1": 10.17,
+            "zone2": 11.82,
+            "zone3": 13.91,
+            "zone4": 16.68
+        },
+        "latvia": {
+            "zone1": 22.14,
+            "zone2": 26.02,
+            "zone3": 34.85
+        },
+        "lithuania": {
+            "zone1": 24.01,
+            "zone2": 26.62,
+            "zone3": 37.39
+        }
+    },
+    {
+        "kg": 50,
+        "m3": 0.2,
+        "estonia": {
+            "zone1": 13.09,
+            "zone2": 16.15,
+            "zone3": 19.36,
+            "zone4": 23.26
+        },
+        "latvia": {
+            "zone1": 28.79,
+            "zone2": 35.97,
+            "zone3": 41.35
+        },
+        "lithuania": {
+            "zone1": 31.03,
+            "zone2": 37.02,
+            "zone3": 45.16
+        }
+    },
+    {
+        "kg": 75,
+        "m3": 0.3,
+        "estonia": {
+            "zone1": 14.73,
+            "zone2": 18.85,
+            "zone3": 22.58,
+            "zone4": 27.14
+        },
+        "latvia": {
+            "zone1": 34.92,
+            "zone2": 42.18,
+            "zone3": 48.53
+        },
+        "lithuania": {
+            "zone1": 37.84,
+            "zone2": 43.52,
+            "zone3": 52.19
+        }
+    },
+    {
+        "kg": 100,
+        "m3": 0.4,
+        "estonia": {
+            "zone1": 16.53,
+            "zone2": 20.49,
+            "zone3": 23.77,
+            "zone4": 28.49
+        },
+        "latvia": {
+            "zone1": 39.93,
+            "zone2": 49.95,
+            "zone3": 57.42
+        },
+        "lithuania": {
+            "zone1": 44.57,
+            "zone2": 51.22,
+            "zone3": 61.47
+        }
+    },
+    {
+        "kg": 150,
+        "m3": 0.6,
+        "estonia": {
+            "zone1": 19.59,
+            "zone2": 25.27,
+            "zone3": 30.36,
+            "zone4": 37.02
+        },
+        "latvia": {
+            "zone1": 47.03,
+            "zone2": 57.28,
+            "zone3": 65.88
+        },
+        "lithuania": {
+            "zone1": 51.22,
+            "zone2": 58.92,
+            "zone3": 71.93
+        }
+    },
+    {
+        "kg": 200,
+        "m3": 0.8,
+        "estonia": {
+            "zone1": 22.43,
+            "zone2": 28.04,
+            "zone3": 33.65,
+            "zone4": 41.06
+        },
+        "latvia": {
+            "zone1": 50.54,
+            "zone2": 63.19,
+            "zone3": 72.68
+        },
+        "lithuania": {
+            "zone1": 58.17,
+            "zone2": 66.92,
+            "zone3": 80.31
+        }
+    },
+    {
+        "kg": 300,
+        "m3": 1.2,
+        "estonia": {
+            "zone1": 25.87,
+            "zone2": 32.37,
+            "zone3": 38.81,
+            "zone4": 47.34
+        },
+        "latvia": {
+            "zone1": 63.41,
+            "zone2": 79.27,
+            "zone3": 91.90
+        },
+        "lithuania": {
+            "zone1": 68.20,
+            "zone2": 85.25,
+            "zone3": 99.53
+        }
+    },
+    {
+        "kg": 400,
+        "m3": 1.6,
+        "estonia": {
+            "zone1": 29.46,
+            "zone2": 36.78,
+            "zone3": 44.04,
+            "zone4": 53.91
+        },
+        "latvia": {
+            "zone1": 69.24,
+            "zone2": 86.52,
+            "zone3": 99.53
+        },
+        "lithuania": {
+            "zone1": 77.17,
+            "zone2": 96.47,
+            "zone3": 112.17
+        }
+    },
+    {
+        "kg": 500,
+        "m3": 2.0,
+        "estonia": {
+            "zone1": 33.12,
+            "zone2": 41.43,
+            "zone3": 49.73,
+            "zone4": 60.86
+        },
+        "latvia": {
+            "zone1": 80.68,
+            "zone2": 100.88,
+            "zone3": 116.05
+        },
+        "lithuania": {
+            "zone1": 87.12,
+            "zone2": 108.95,
+            "zone3": 125.25
+        }
+    },
+    {
+        "kg": 600,
+        "m3": 2.4,
+        "estonia": {
+            "zone1": 39.56,
+            "zone2": 49.43,
+            "zone3": 59.38,
+            "zone4": 72.39
+        },
+        "latvia": {
+            "zone1": 93.40,
+            "zone2": 116.80,
+            "zone3": 134.30
+        },
+        "lithuania": {
+            "zone1": 104.46,
+            "zone2": 130.56,
+            "zone3": 150.15
+        }
+    },
+    {
+        "kg": 700,
+        "m3": 2.8,
+        "estonia": {
+            "zone1": 43.37,
+            "zone2": 54.22,
+            "zone3": 65.05,
+            "zone4": 79.34
+        },
+        "latvia": {
+            "zone1": 106.70,
+            "zone2": 133.32,
+            "zone3": 153.36
+        },
+        "lithuania": {
+            "zone1": 123.68,
+            "zone2": 154.57,
+            "zone3": 177.75
+        }
+    },
+    {
+        "kg": 800,
+        "m3": 3.2,
+        "estonia": {
+            "zone1": 47.78,
+            "zone2": 59.75,
+            "zone3": 71.71,
+            "zone4": 86.66
+        },
+        "latvia": {
+            "zone1": 119.34,
+            "zone2": 149.26,
+            "zone3": 171.62
+        },
+        "lithuania": {
+            "zone1": 126.75,
+            "zone2": 158.45,
+            "zone3": 182.23
+        }
+    },
+    {
+        "kg": 900,
+        "m3": 3.6,
+        "estonia": {
+            "zone1": 53.09,
+            "zone2": 66.40,
+            "zone3": 79.64,
+            "zone4": 97.13
+        },
+        "latvia": {
+            "zone1": 126.68,
+            "zone2": 158.30,
+            "zone3": 182.08
+        },
+        "lithuania": {
+            "zone1": 129.81,
+            "zone2": 162.27,
+            "zone3": 186.57
+        }
+    },
+    {
+        "kg": 1000,
+        "m3": 4.0,
+        "estonia": {
+            "zone1": 61.69,
+            "zone2": 77.09,
+            "zone3": 92.57,
+            "zone4": 112.92
+        },
+        "latvia": {
+            "zone1": 163.24,
+            "zone2": 204.06,
+            "zone3": 234.64
+        },
+        "lithuania": {
+            "zone1": 172.13,
+            "zone2": 215.13,
+            "zone3": 247.43
+        }
+    }
+]

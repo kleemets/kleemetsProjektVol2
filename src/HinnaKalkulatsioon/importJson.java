@@ -27,7 +27,6 @@ public class importJson {
         vastus2.setFont(Font.font("Arial", FontWeight.BOLD,16));
         HinnaParing.vb.getChildren().addAll(vastus2);
 
-
         HinnaParing.lava3.setScene(HinnaParing.stseen3);
         HinnaParing.lava3.show();
         HinnaParing.lava3.setOnCloseRequest(event -> {

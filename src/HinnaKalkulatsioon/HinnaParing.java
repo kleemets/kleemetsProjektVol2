@@ -12,6 +12,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.util.regex.Pattern;
 
 /**
  * Created by Leemets on 2.12.2015.
@@ -40,12 +41,12 @@ public class HinnaParing {
         Label l = new  Label ("Sisesta paki kaal");
         kaal = new TextField();
         kaal.setPromptText ("Palun sisestage kaal vahemikus 0-1000");
+        kaal.setFocusTraversable(false);
 
         lava3.setTitle("Hinnakalkulaator");
         lava3.getIcons().add(new Image("unnamed.png"));
         ok = new Button("OK");
         vb.setStyle("-fx-background-color: #FFFFFF;");
-
 
         vb.setSpacing(10);
         vb.getChildren().addAll(l,kaal,ok);
@@ -53,7 +54,6 @@ public class HinnaParing {
         stseen3 = new Scene(vb,300,125);
         lava3.setScene(stseen3);
         lava3.show();
-
 
     }
 
@@ -80,8 +80,9 @@ public class HinnaParing {
                 pane1.getChildren().addAll(veaTeade);
                 viga.setScene(stseen);
                 viga.show();
+
             //Sisestatud kaalu kontrollimine, kas on sisestatud täht või sõnad
-            }else if (sisestatudKaal.matches("[a-zA-Z\\-_]+"))  {
+            }else if (sisestatudKaal.matches("[a-zA-Z\\_]+"))  {
                 Stage  viga = new Stage();
                 Pane pane1 = new Pane();
                 pane1.setPrefSize(300,100);
@@ -98,8 +99,8 @@ public class HinnaParing {
                 viga.setScene(stseen);
                 viga.show();
 
-            //Sisestatud kaalu kontrollimine, kas on sisestatud muid märke, kaasaarvatud koma.
-            }else if (sisestatudKaal.matches("[\\\\\\\\!\\\"#$%&()*+,./:;<=>?@\\\\[\\\\]^_{|}~]+")) {
+            //Sisestatud kaalu kontrollimine, kas on sisestatud muid märke "," või "-"
+            }else if (sisestatudKaal.contains(",") || sisestatudKaal.contains("-")) {
                 Stage  viga = new Stage();
                 Pane pane1 = new Pane();
                 pane1.setPrefSize(300,100);
@@ -114,11 +115,29 @@ public class HinnaParing {
                 pane1.getChildren().addAll(veaTeade);
                 viga.setScene(stseen);
                 viga.show();
-            //Kui kõik sisestatud andmed on õiged, siis teisendab saadud tulemuse Double-ks
-            } else {
 
-                reaalKaal = Double.parseDouble(sisestatudKaal);
 
+                //Kui kõik sisestatud andmed on õiged, siis teisendab saadud tulemuse Double-ks
+            }else {
+
+                reaalKaal=Double.parseDouble(sisestatudKaal);
+                //Kontrollib, kas sisestatud kaal jääb vahemikku 0-1000kg
+                if (reaalKaal> 1000){
+                    Stage  viga = new Stage();
+                    Pane pane1 = new Pane();
+                    pane1.setPrefSize(300,100);
+                    Label veaTeade = new Label("Palun sisesta kaal vahemikus 0-1000!");
+                    veaTeade.setFont(Font.font("Arial", FontWeight.BOLD, 15));
+                    viga.setTitle("Viga!");
+                    veaTeade.setTranslateY(40);
+                    veaTeade.setTranslateX(20);
+
+                    pane1.setStyle("-fx-background-color: #fa0205;");
+                    Scene stseen = new Scene(pane1);
+                    pane1.getChildren().addAll(veaTeade);
+                    viga.setScene(stseen);
+                    viga.show();
+                }else {
                 importJson j = null;
                 try {
                     j = new importJson();
@@ -140,6 +159,7 @@ public class HinnaParing {
                     e.printStackTrace();
                 }
                 j.uusAken2();
+            }
             }
         });
 
